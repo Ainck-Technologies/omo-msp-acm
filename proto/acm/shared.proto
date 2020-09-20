@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package account;
+
+// 状态
+message Status {
+  int32 code = 1;     // 状态码
+  string message = 2; // 状态信息
+}
+
+// 策略
+enum Strategy {
+  STRATEGY_NONE = 0; // 无
+  STRATEGY_JWT = 1;  // JWT
+}
+
+// 查询字段
+enum QueryField {
+  QUERY_FIELD_NONE = 0;     //无
+  QUERY_FIELD_UUID = 1;     // UUID
+  QUERY_FIELD_USERNAME = 2; // Username
+}
+
+// 账号实体
+message AccountEntity {
+  string username = 1; // 用户名
+  string uuid = 2;     // 唯一识别标识
+  string profile = 3;  // 个人资料
+  int64 createdAt = 4; // 创建时间
+  int64 updatedAt = 5; // 修改时间
+}
